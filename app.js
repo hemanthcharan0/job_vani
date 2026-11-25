@@ -2517,6 +2517,7 @@ function openJobModal(id) {
   `;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  history.pushState({ modal: true }, '', window.location.hash);
 }
 
 function openInternModal(id) {
@@ -2565,6 +2566,7 @@ function openInternModal(id) {
   `;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  history.pushState({ modal: true }, '', window.location.hash);
 }
 
 function openEntranceModal(id) {
@@ -2617,16 +2619,37 @@ function openEntranceModal(id) {
   `;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  history.pushState({ modal: true }, '', window.location.hash);
 }
 
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
+function closeModal(fromHistory = true) {
+  const overlay = document.getElementById('modal-overlay');
+  if (!overlay || !overlay.classList.contains('open')) return;
+  overlay.classList.remove('open');
   document.body.style.overflow = '';
+  if (fromHistory && window.history.state && window.history.state.modal) {
+    window.history.back();
+  }
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* ─── SEARCH & ROUTING ───────────────────────────────────────────── */
-function showPage(pageId) {
+/* ─── SEARCH & ROUTING (SPA HISTORY SUPPORT FOR MOBILE BACK BUTTON) ── */
+function getCurrentPage() {
+  const active = document.querySelector('.page.active');
+  return active ? active.id.replace('page-', '') : 'home';
+}
+
+function showPage(pageId, push = true) {
+  const current = getCurrentPage();
+  if (current === pageId && !push) return;
+
+  // Close open modal overlay if switching pages
+  const overlay = document.getElementById('modal-overlay');
+  if (overlay && overlay.classList.contains('open')) {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
   const page = document.getElementById('page-' + pageId);
@@ -2636,8 +2659,13 @@ function showPage(pageId) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById('nav-links').classList.remove('open');
 
-  if (window.location.hash !== '#' + pageId) {
-    history.replaceState(null, null, '#' + pageId);
+  // Push history state so mobile hardware/swipe Back button goes back to home instead of exiting!
+  if (push) {
+    if (pageId === 'home') {
+      history.pushState({ page: 'home' }, '', '#home');
+    } else {
+      history.pushState({ page: pageId }, '', '#' + pageId);
+    }
   }
 
   if (pageId === 'jobs') renderJobsPage();
@@ -2646,13 +2674,29 @@ function showPage(pageId) {
   if (pageId === 'alerts') renderAlerts();
 }
 
-function handleHashRoute() {
-  const hash = window.location.hash.replace('#', '').trim().toLowerCase();
-  if (['jobs', 'internships', 'entrance', 'alerts', 'home'].includes(hash)) {
-    showPage(hash);
+// Mobile Hardware & Browser Back Button Handler
+window.addEventListener('popstate', e => {
+  // 1. If an active modal is open, close modal and stay on current page
+  const modalOverlay = document.getElementById('modal-overlay');
+  if (modalOverlay && modalOverlay.classList.contains('open')) {
+    closeModal(false);
+    return;
   }
-}
-window.addEventListener('hashchange', handleHashRoute);
+
+  // 2. If mobile nav drawer is open, close it
+  const navLinks = document.getElementById('nav-links');
+  if (navLinks && navLinks.classList.contains('open')) {
+    navLinks.classList.remove('open');
+    return;
+  }
+
+  // 3. Otherwise navigate to the previous view or fall back to home
+  const statePage = e.state && e.state.page;
+  const hashPage = window.location.hash.replace('#', '').trim().toLowerCase();
+  const targetPage = statePage || (['jobs', 'internships', 'entrance', 'alerts', 'home'].includes(hashPage) ? hashPage : 'home');
+
+  showPage(targetPage, false);
+});
 
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', e => {
@@ -2710,8 +2754,14 @@ document.addEventListener('DOMContentLoaded', () => {
   renderStates();
   initAutoSync();
 
-  // Route initial hash if present (e.g. #jobs)
-  if (window.location.hash) {
-    handleHashRoute();
+  // Establish 'home' as root history entry so pressing Back on mobile ALWAYS returns to Home before exiting!
+  const initialHash = window.location.hash.replace('#', '').trim().toLowerCase();
+  if (initialHash && ['jobs', 'internships', 'entrance', 'alerts'].includes(initialHash)) {
+    history.replaceState({ page: 'home' }, '', '#home');
+    history.pushState({ page: initialHash }, '', '#' + initialHash);
+    showPage(initialHash, false);
+  } else {
+    history.replaceState({ page: 'home' }, '', '#home');
+    showPage('home', false);
   }
 });
