@@ -1794,6 +1794,15 @@ function showLiveToast(msg) {
 /* ─── DJANGO BACKEND SYNC INTEGRATION ────────────────────────────── */
 const DJANGO_API_BASE = 'http://127.0.0.1:8000/api';
 
+// Dynamically sync footer Admin Login link with active backend host
+function updateAdminPortalLink() {
+  const adminLink = document.getElementById('footer-admin-link');
+  if (adminLink) {
+    const adminUrl = DJANGO_API_BASE.replace(/\/api\/?$/, '') + '/admin/';
+    adminLink.href = adminUrl;
+  }
+}
+
 async function fetchFromDjangoBackend() {
   try {
     const controller = new AbortController();
@@ -2677,6 +2686,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderJobsGrid();
   renderStates();
   initAutoSync();
+  updateAdminPortalLink();
 
   // Route initial hash if present (e.g. #jobs)
   if (window.location.hash) {
