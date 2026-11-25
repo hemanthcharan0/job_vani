@@ -1929,7 +1929,7 @@ function renderJobsGrid() {
 function jobCard(j) {
   const daysLeft = getDaysLeft(j.lastDate);
   return `
-    <div class="job-card" onclick="openJobModal(${j.id})">
+    <div class="job-card" onclick="openJobModal('${j.id}')">
       <div class="job-card-header">
         <div class="job-dept-logo" style="background:${j.iconBg}">${renderIcon(j.icon, j.dept, 'dept-logo-img')}</div>
         <div class="job-card-info">
@@ -1950,7 +1950,7 @@ function jobCard(j) {
           <div class="deadline-text">Last Date</div>
           <div class="deadline-date">${formatDate(j.lastDate)} (${daysLeft}d left)</div>
         </div>
-        <button class="apply-btn-mini" onclick="event.stopPropagation();openJobModal(${j.id})">View Details →</button>
+        <button class="apply-btn-mini" onclick="event.stopPropagation();openJobModal('${j.id}')">View Details →</button>
       </div>
     </div>
   `;
@@ -1973,7 +1973,7 @@ function renderDynamicDeadlines() {
     const tagCls = d.daysLeft <= 3 ? 'tag-red' : d.daysLeft <= 7 ? 'tag-orange' : 'tag-blue';
     const tagText = d.daysLeft <= 3 ? 'CLOSING SOON' : d.daysLeft <= 7 ? 'WARNING' : 'ACTIVE';
     return `
-      <div class="deadline-item" onclick="openJobModal(${d.id})">
+      <div class="deadline-item" onclick="openJobModal('${d.id}')">
         <div class="deadline-days ${cls}">
           <div class="days-num">${d.daysLeft}</div>
           <div class="days-label">days</div>
@@ -2208,7 +2208,7 @@ function jobListCard(j) {
     domain = 'gov portal';
   }
   return `
-    <div class="job-list-card" onclick="openJobModal(${j.id})">
+    <div class="job-list-card" onclick="openJobModal('${j.id}')">
       <div class="job-list-logo" style="background:${j.iconBg}">${renderIcon(j.icon, j.dept, 'dept-logo-img')}</div>
       <div class="job-list-body">
         <div class="job-list-title">${j.title}</div>
@@ -2228,7 +2228,7 @@ function jobListCard(j) {
         <span class="vacancies-badge">🧑‍💼 ${typeof j.vacancies === 'number' ? j.vacancies.toLocaleString('en-IN') : j.vacancies} Posts</span>
         <div class="list-deadline">Last Date: ${formatDate(j.lastDate)}<br/><strong>${daysLeft} days left</strong></div>
         <div class="card-action-btns">
-          <button class="list-apply-btn outline-btn" onclick="event.stopPropagation();openJobModal(${j.id})">Details</button>
+          <button class="list-apply-btn outline-btn" onclick="event.stopPropagation();openJobModal('${j.id}')">Details</button>
           <a href="${j.officialLink}" target="_blank" rel="noopener noreferrer" class="list-apply-btn" onclick="event.stopPropagation();" title="Apply directly on ${domain}">Apply ↗</a>
         </div>
       </div>
@@ -2270,7 +2270,7 @@ function renderJobsTable(jobs) {
           ${getDeadlineBadgeHTML(j.lastDate)}
         </td>
         <td style="text-align:center; white-space:nowrap;">
-          <button class="tp-btn-detail" onclick="openJobModal(${j.id})">Detail</button>
+          <button class="tp-btn-detail" onclick="openJobModal('${j.id}')">Detail</button>
           <a href="${j.officialLink}" target="_blank" rel="noopener noreferrer" class="tp-btn-apply" style="margin-left:5px;" title="Apply on official portal">Apply ↗</a>
         </td>
       </tr>
@@ -2318,7 +2318,7 @@ function renderInternships(cat) {
   if (!grid) return;
   const list = cat === 'all' ? INTERNSHIPS : INTERNSHIPS.filter(i => i.category === cat);
   grid.innerHTML = list.map(i => `
-    <div class="intern-card" onclick="openInternModal(${i.id})">
+    <div class="intern-card" onclick="openInternModal('${i.id}')">
       <div class="intern-card-top">
         <div class="intern-org-icon" style="background:${i.iconBg}">${renderIcon(i.icon, i.org, 'org-logo-img')}</div>
         <div>
@@ -2335,7 +2335,7 @@ function renderInternships(cat) {
         <p class="intern-desc">${i.desc}</p>
         <div class="intern-footer">
           <div class="intern-deadline">Last Date: ${formatDate(i.lastDate)} (${getDaysLeft(i.lastDate)}d left)</div>
-          <button class="intern-apply-btn" onclick="event.stopPropagation();openInternModal(${i.id})">Apply Now →</button>
+          <button class="intern-apply-btn" onclick="event.stopPropagation();openInternModal('${i.id}')">Apply Now →</button>
         </div>
       </div>
     </div>
@@ -2354,7 +2354,7 @@ function renderEntrance(cat) {
   if (!grid) return;
   const list = cat === 'all' ? ENTRANCE_EXAMS : ENTRANCE_EXAMS.filter(e => e.category === cat);
   grid.innerHTML = list.map(e => `
-    <div class="entrance-card" onclick="openEntranceModal(${e.id})">
+    <div class="entrance-card" onclick="openEntranceModal('${e.id}')">
       <div class="entrance-card-top">
         <div class="entrance-header-left">
           <div class="entrance-exam-logo-wrap">${renderIcon(e.icon, e.name, 'entrance-logo-img')}</div>
@@ -2375,7 +2375,7 @@ function renderEntrance(cat) {
       <div class="entrance-institutes">🏫 ${e.institutes}</div>
       <div class="entrance-footer">
         <div class="exam-date">Next: ${e.examDate}</div>
-        <button class="entrance-apply-btn" onclick="event.stopPropagation();openEntranceModal(${e.id})">Register →</button>
+        <button class="entrance-apply-btn" onclick="event.stopPropagation();openEntranceModal('${e.id}')">Register →</button>
       </div>
     </div>
   `).join('');
@@ -2409,7 +2409,7 @@ function subscribeAlerts(e) {
 
 /* ─── MODAL DIALOGS ──────────────────────────────────────────────── */
 function openJobModal(id) {
-  const j = JOBS.find(x => x.id === id);
+  const j = JOBS.find(x => String(x.id) === String(id));
   if (!j) return;
   const daysLeft = getDaysLeft(j.lastDate);
   let domain = '';
@@ -2488,7 +2488,7 @@ function openJobModal(id) {
 }
 
 function openInternModal(id) {
-  const i = INTERNSHIPS.find(x => x.id === id);
+  const i = INTERNSHIPS.find(x => String(x.id) === String(id));
   if (!i) return;
   document.getElementById('modal-content').innerHTML = `
     <div class="modal-dept-header">
@@ -2536,7 +2536,7 @@ function openInternModal(id) {
 }
 
 function openEntranceModal(id) {
-  const e = ENTRANCE_EXAMS.find(x => x.id === id);
+  const e = ENTRANCE_EXAMS.find(x => String(x.id) === String(id));
   if (!e) return;
   document.getElementById('modal-content').innerHTML = `
     <div class="modal-dept-header">
