@@ -2208,6 +2208,9 @@ function jobListCard(j) {
   } catch (e) {
     domain = 'gov portal';
   }
+  const vacDisplay = typeof j.vacancies === 'number'
+    ? `${j.vacancies.toLocaleString('en-IN')} Posts`
+    : (String(j.vacancies || '').toLowerCase().includes('post') ? j.vacancies : `${j.vacancies || 'Multiple'} Posts`);
   return `
     <div class="job-list-card" onclick="openJobModal('${j.id}')">
       <div class="job-list-logo" style="background:${j.iconBg}">${renderIcon(j.icon, j.dept, 'dept-logo-img')}</div>
@@ -2226,7 +2229,7 @@ function jobListCard(j) {
         </div>
       </div>
       <div class="job-list-right">
-        <span class="vacancies-badge">🧑‍💼 ${typeof j.vacancies === 'number' ? j.vacancies.toLocaleString('en-IN') : j.vacancies} Posts</span>
+        <span class="vacancies-badge">🧑‍💼 ${vacDisplay}</span>
         <div class="list-deadline">Last Date: ${formatDate(j.lastDate)}<br/><strong>${daysLeft} days left</strong></div>
         <div class="card-action-btns">
           <button class="list-apply-btn outline-btn" onclick="event.stopPropagation();openJobModal('${j.id}')">Details</button>
