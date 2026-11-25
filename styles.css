@@ -1345,22 +1345,73 @@ input, select, textarea { font-family: inherit; }
   .alerts-layout { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
-@media(max-width:640px){
+@media(max-width:768px){
   .gov-strip { display: none; }
-  .nav-links {
-    position: fixed; top: 62px; left: 0; right: 0;
-    background: var(--gov-navy-dark);
-    flex-direction: column; height: auto;
-    padding: 8px 0;
-    transform: translateY(-110%);
-    transition: var(--transition);
-    z-index: 999;
-    border-bottom: 2px solid var(--saffron);
+  .nav-container {
+    padding: 0 14px;
+    height: 60px;
   }
-  .nav-links.open { transform: translateY(0); }
-  .nav-link { width: 100%; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,.06); }
-  .nav-link.active { border-bottom-color: rgba(255,255,255,.06); border-left: 3px solid var(--saffron); }
-  .hamburger { display: flex; }
+  .nav-brand {
+    gap: 8px;
+  }
+  .brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .brand-main {
+    font-size: 1.05rem;
+  }
+  .brand-sub {
+    font-size: 0.58rem;
+  }
+  .nav-actions {
+    gap: 6px;
+    margin-left: 8px;
+  }
+  .btn-notify {
+    padding: 6px 8px;
+    font-size: 0.95rem;
+  }
+  .hamburger {
+    display: flex;
+    padding: 7px 9px;
+  }
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--gov-navy-dark);
+    flex-direction: column;
+    height: auto;
+    padding: 8px 0;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, visibility 0.25s;
+    z-index: 999;
+    border-bottom: 3px solid var(--saffron);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .nav-link {
+    width: 100%;
+    padding: 13px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .nav-link.active {
+    border-bottom-color: rgba(255,255,255,.08);
+    border-left: 4px solid var(--saffron);
+    background: rgba(255,255,255,.05);
+  }
+}
+@media(max-width:640px){
   .hero { padding: 36px 16px 32px; }
   .footer-grid { grid-template-columns: 1fr; }
   .modal-info-grid { grid-template-columns: 1fr; }
