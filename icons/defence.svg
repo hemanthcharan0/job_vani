@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <radialGradient id="army-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#991B1B"/>
+      <stop offset="100%" stop-color="#450A0A"/>
+    </radialGradient>
+    <linearGradient id="army-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#854D0E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer circular seal -->
+  <circle cx="50" cy="50" r="48" fill="url(#army-bg)" stroke="url(#army-gold)" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="43" fill="none" stroke="#FEF08A" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- Crossed Indian Scimitar / Talwar Swords -->
+  <g stroke="url(#army-gold)" stroke-linecap="round">
+    <!-- Sword 1: Top-Left to Bottom-Right -->
+    <path d="M 24,24 Q 45,46 76,76" fill="none" stroke-width="3"/>
+    <!-- Blade curve tip -->
+    <path d="M 24,24 Q 21,21 22,28" fill="none" stroke-width="2.5"/>
+    <!-- Hilt & Pommel -->
+    <rect x="73" y="73" width="7" height="3" rx="1" fill="#FEF08A" stroke-width="0.8" transform="rotate(45 76.5 74.5)"/>
+    <circle cx="79" cy="79" r="2.5" fill="url(#army-gold)"/>
+
+    <!-- Sword 2: Top-Right to Bottom-Left -->
+    <path d="M 76,24 Q 55,46 24,76" fill="none" stroke-width="3"/>
+    <path d="M 76,24 Q 79,21 78,28" fill="none" stroke-width="2.5"/>
+    <!-- Hilt & Pommel -->
+    <rect x="20" y="73" width="7" height="3" rx="1" fill="#FEF08A" stroke-width="0.8" transform="rotate(-45 23.5 74.5)"/>
+    <circle cx="21" cy="79" r="2.5" fill="url(#army-gold)"/>
+  </g>
+
+  <!-- Ashoka Lion Capital (National Emblem) at Center Top -->
+  <g fill="url(#army-gold)" stroke="#713F12" stroke-width="0.3">
+    <!-- Center Lion -->
+    <path d="M 46,18 Q 50,14 54,18 Q 57,21 56,25 Q 54,30 50,31 Q 46,30 44,25 Q 43,21 46,18 Z"/>
+    <!-- Side Lions -->
+    <path d="M 44,20 Q 39,18 38,22 Q 37,26 40,29 Q 43,30 46,28 Z"/>
+    <path d="M 56,20 Q 61,18 62,22 Q 63,26 60,29 Q 57,30 54,28 Z"/>
+    <!-- Chest & Pedestal -->
+    <path d="M 40,29 L 44,38 L 56,38 L 60,29 Q 50,32 40,29 Z"/>
+    <rect x="36" y="38" width="28" height="3" rx="0.8" fill="#FEF08A"/>
+    <!-- Chakra -->
+    <circle cx="50" cy="39.5" r="1.5" fill="#450A0A"/>
+    <!-- Bell Base -->
+    <path d="M 39,41 C 39,43.5 43,45 50,45 C 57,45 61,43.5 61,41 Z"/>
+    <rect x="35" y="45" width="30" height="2" rx="0.5"/>
+  </g>
+
+  <!-- Laurel Wreath in gold surrounding center -->
+  <g fill="none" stroke="url(#army-gold)" stroke-width="1.8">
+    <path d="M 30,62 C 26,52 28,40 33,35"/>
+    <path d="M 70,62 C 74,52 72,40 67,35"/>
+  </g>
+
+  <!-- Banner / Motto: INDIAN ARMY / DEFENCE -->
+  <rect x="20" y="62" width="60" height="12" rx="2" fill="#7F1D1D" stroke="url(#army-gold)" stroke-width="1"/>
+  <text x="50" y="70.5" fill="#FEF08A" font-size="5" font-family="'Outfit', sans-serif" font-weight="900" text-anchor="middle" letter-spacing="0.8">INDIAN ARMY</text>
+
+  <text x="50" y="83" fill="#FFFFFF" font-size="3.6" font-family="'Noto Sans Devanagari', sans-serif" font-weight="700" text-anchor="middle">सेवा परमो धर्मः</text>
+  <text x="50" y="88" fill="#FEF08A" font-size="3" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.5">MINISTRY OF DEFENCE</text>
+</svg>

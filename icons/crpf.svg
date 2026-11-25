@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <radialGradient id="crpf-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </radialGradient>
+    <linearGradient id="crpf-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#EAB308"/>
+      <stop offset="100%" stop-color="#A16207"/>
+    </linearGradient>
+  </defs>
+  <path d="M 50,8 Q 84,8 84,38 C 84,68 50,92 50,92 C 50,92 16,68 16,38 Q 16,8 50,8 Z" fill="url(#crpf-bg)" stroke="url(#crpf-gold)" stroke-width="2.5"/>
+  <path d="M 50,13 Q 78,13 78,38 C 78,64 50,85 50,85 C 50,85 22,64 22,38 Q 22,13 50,13 Z" fill="none" stroke="#FEF08A" stroke-width="0.8" opacity="0.5"/>
+  <line x1="28" y1="28" x2="72" y2="68" stroke="url(#crpf-gold)" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="72" y1="28" x2="28" y2="68" stroke="url(#crpf-gold)" stroke-width="2.5" stroke-linecap="round"/>
+  <g fill="url(#crpf-gold)" stroke="#713F12" stroke-width="0.3">
+    <path d="M 46,20 Q 50,16 54,20 Q 57,23 56,27 Q 54,32 50,33 Q 46,32 44,27 Q 43,23 46,20 Z"/>
+    <path d="M 44,22 Q 39,20 38,24 Q 37,28 40,31 Q 43,32 46,30 Z"/>
+    <path d="M 56,22 Q 61,20 62,24 Q 63,28 60,31 Q 57,32 54,30 Z"/>
+    <path d="M 40,31 L 44,40 L 56,40 L 60,31 Q 50,34 40,31 Z"/>
+    <rect x="36" y="40" width="28" height="3" rx="0.8" fill="#FEF08A"/>
+    <circle cx="50" cy="41.5" r="1.5" fill="#1E3A8A"/>
+    <path d="M 39,43 C 39,45.5 43,47 50,47 C 57,47 61,45.5 61,43 Z"/>
+    <rect x="35" y="47" width="30" height="2" rx="0.5"/>
+  </g>
+  <polygon points="50,46 53,52 60,52 55,56 57,62 50,58 43,62 45,56 40,52 47,52" fill="url(#crpf-gold)" stroke="#78350F" stroke-width="0.5"/>
+  <rect x="25" y="66" width="50" height="12" rx="2" fill="#1E293B" stroke="url(#crpf-gold)" stroke-width="1"/>
+  <text x="50" y="74.5" fill="#FEF08A" font-size="7" font-family="'Outfit', sans-serif" font-weight="900" text-anchor="middle" letter-spacing="1">C R P F</text>
+  <text x="50" y="83" fill="#FFFFFF" font-size="3.2" font-family="'Noto Sans Devanagari', sans-serif" font-weight="700" text-anchor="middle">सेवा और निष्ठा</text>
+</svg>

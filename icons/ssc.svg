@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ssc-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9933"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#138808"/>
+    </linearGradient>
+    <radialGradient id="ssc-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Outer Circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#ssc-bg)" stroke="#1E3A8A" stroke-width="2.5"/>
+
+  <!-- Tricolor Arcs -->
+  <path d="M 50,6 A 44,44 0 0,1 94,50" fill="none" stroke="#FF9933" stroke-width="4.5"/>
+  <path d="M 94,50 A 44,44 0 0,1 50,94" fill="none" stroke="#138808" stroke-width="4.5"/>
+  <path d="M 50,94 A 44,44 0 0,1 6,50" fill="none" stroke="#1E3A8A" stroke-width="4.5"/>
+  <path d="M 6,50 A 44,44 0 0,1 50,6" fill="none" stroke="#D97706" stroke-width="4.5"/>
+
+  <!-- Inner Seal -->
+  <circle cx="50" cy="50" r="37" fill="#F8FAFC" stroke="#1E3A8A" stroke-width="1.5"/>
+
+  <!-- Ashoka Chakra Spokes in subtle blue background -->
+  <circle cx="50" cy="46" r="18" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Central Ashoka Lion Capital Motif in Navy Blue -->
+  <g fill="#1E3A8A">
+    <!-- Center Lion -->
+    <path d="M 46,26 Q 50,22 54,26 Q 57,29 56,33 Q 54,38 50,39 Q 46,38 44,33 Q 43,29 46,26 Z"/>
+    <!-- Side Lions -->
+    <path d="M 44,28 Q 39,26 38,30 Q 37,34 40,37 Q 43,38 46,36 Z"/>
+    <path d="M 56,28 Q 61,26 62,30 Q 63,34 60,37 Q 57,38 54,36 Z"/>
+    <!-- Lion Chests & Base -->
+    <path d="M 40,37 L 44,48 L 56,48 L 60,37 Q 50,40 40,37 Z"/>
+    <rect x="36" y="48" width="28" height="3" rx="0.8" fill="#1E3A8A"/>
+    <!-- Chakra on pedestal -->
+    <circle cx="50" cy="49.5" r="1.8" fill="#FFFFFF"/>
+    <circle cx="50" cy="49.5" r="0.8" fill="#1E3A8A"/>
+    <!-- Pedestal bell base -->
+    <path d="M 39,51 C 39,54 43,56 50,56 C 57,56 61,54 61,51 Z"/>
+    <rect x="35" y="56" width="30" height="2" rx="0.5"/>
+  </g>
+
+  <!-- SSC Banner / Badge -->
+  <rect x="25" y="61" width="50" height="13" rx="3" fill="#1E3A8A"/>
+  <text x="50" y="70" fill="#FFFFFF" font-size="8" font-family="'Outfit', sans-serif" font-weight="900" text-anchor="middle" letter-spacing="1.5">S S C</text>
+
+  <!-- Organization text -->
+  <text x="50" y="80" fill="#0F172A" font-size="3.2" font-family="'Noto Sans Devanagari', sans-serif" font-weight="700" text-anchor="middle">कर्मचारी चयन आयोग</text>
+  <text x="50" y="85" fill="#475569" font-size="2.6" font-family="'Outfit', sans-serif" font-weight="700" text-anchor="middle" letter-spacing="0.3">GOVERNMENT OF INDIA</text>
+</svg>

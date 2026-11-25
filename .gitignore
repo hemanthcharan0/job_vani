@@ -1,0 +1,18 @@
+# Python compiled bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Static files collected for production
+backend/staticfiles/
+
+# Virtual Environments
+venv/
+env/
+.env
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

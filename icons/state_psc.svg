@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <radialGradient id="psc-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="100%" stop-color="#1E1B4B"/>
+    </radialGradient>
+    <linearGradient id="psc-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="50" cy="50" r="48" fill="url(#psc-bg)" stroke="url(#psc-gold)" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="43" fill="none" stroke="#FEF08A" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Ashoka Lions Emblem -->
+  <g fill="url(#psc-gold)" stroke="#78350F" stroke-width="0.3">
+    <path d="M 46,18 Q 50,14 54,18 Q 57,21 56,26 Q 54,32 50,33 Q 46,32 44,26 Q 43,21 46,18 Z"/>
+    <path d="M 44,21 Q 39,19 38,23 Q 37,27 40,30 Q 43,31 46,29 Z"/>
+    <path d="M 56,21 Q 61,19 62,23 Q 63,27 60,30 Q 57,31 54,29 Z"/>
+    <path d="M 40,30 L 44,43 L 56,43 L 60,30 Q 50,34 40,30 Z"/>
+    <rect x="35" y="43" width="30" height="3.5" rx="0.8" fill="#FEF08A"/>
+    <circle cx="50" cy="44.7" r="2" fill="#1E1B4B"/>
+    <path d="M 38,46.5 C 38,50 42,53 50,53 C 58,53 62,50 62,46.5 Z"/>
+    <rect x="34" y="53" width="32" height="2" rx="0.5"/>
+  </g>
+
+  <!-- State Garland / Wreath -->
+  <g fill="none" stroke="url(#psc-gold)" stroke-width="1.8">
+    <path d="M 26,56 C 22,46 24,36 30,30"/>
+    <path d="M 74,56 C 78,46 76,36 70,30"/>
+  </g>
+
+  <!-- STATE PSC Badge -->
+  <rect x="18" y="66" width="64" height="13" rx="2" fill="#312E81" stroke="url(#psc-gold)" stroke-width="1"/>
+  <text x="50" y="75" fill="#FEF08A" font-size="6.5" font-family="'Outfit', sans-serif" font-weight="900" text-anchor="middle" letter-spacing="1">STATE PSC</text>
+
+  <text x="50" y="87" fill="#FFFFFF" font-size="3" font-family="'Noto Sans Devanagari', sans-serif" font-weight="700" text-anchor="middle">राज्य लोक सेवा आयोग</text>
+  <text x="50" y="93" fill="#A5B4FC" font-size="2.6" font-family="'Outfit', sans-serif" font-weight="600" text-anchor="middle" letter-spacing="0.5">STATE GOVERNMENT</text>
+</svg>

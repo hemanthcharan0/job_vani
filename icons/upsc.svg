@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <radialGradient id="upsc-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1A2D5A"/>
+      <stop offset="100%" stop-color="#0A1633"/>
+    </radialGradient>
+    <linearGradient id="upsc-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Circular Gold/Navy Border -->
+  <circle cx="50" cy="50" r="48" fill="url(#upsc-bg)" stroke="url(#upsc-gold)" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="43" fill="none" stroke="#D97706" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <circle cx="50" cy="50" r="38" fill="#0D1F45" stroke="url(#upsc-gold)" stroke-width="1.2"/>
+
+  <!-- Ashoka Lion Capital (Emblem of India) -->
+  <g fill="url(#upsc-gold)" stroke="#78350F" stroke-width="0.3">
+    <!-- Center Lion -->
+    <!-- Head & Mane -->
+    <path d="M 45,21 Q 50,17 55,21 Q 58,25 57,30 Q 55,36 50,37 Q 45,36 43,30 Q 42,25 45,21 Z"/>
+    <!-- Muzzle & Details -->
+    <ellipse cx="50" cy="27" rx="3.5" ry="2.5" fill="#FEF3C7"/>
+    <circle cx="47" cy="24" r="0.9" fill="#78350F"/>
+    <circle cx="53" cy="24" r="0.9" fill="#78350F"/>
+    <polygon points="49,27 51,27 50,29" fill="#78350F"/>
+
+    <!-- Left Lion (Profile) -->
+    <path d="M 43,24 Q 38,22 36,26 Q 34,31 38,35 Q 42,37 45,34 Z"/>
+    <circle cx="37" cy="26" r="0.7" fill="#78350F"/>
+
+    <!-- Right Lion (Profile) -->
+    <path d="M 57,24 Q 62,22 64,26 Q 66,31 62,35 Q 58,37 55,34 Z"/>
+    <circle cx="63" cy="26" r="0.7" fill="#78350F"/>
+
+    <!-- Lion Bodies & Chests -->
+    <path d="M 38,35 L 43,51 L 57,51 L 62,35 Q 50,40 38,35 Z"/>
+
+    <!-- Abacus (Pedestal) -->
+    <rect x="34" y="51" width="32" height="4.5" rx="1" fill="#FEF3C7"/>
+    <!-- Central Dharma Chakra on Abacus -->
+    <circle cx="50" cy="53.2" r="2.8" fill="#1E3A8A" stroke="#FEF3C7" stroke-width="0.4"/>
+    <circle cx="50" cy="53.2" r="0.8" fill="#FEF3C7"/>
+
+    <!-- Galloping Horse (Left) & Bull (Right) simplified outlines -->
+    <circle cx="40" cy="53.2" r="1.2" fill="#92400E"/>
+    <circle cx="60" cy="53.2" r="1.2" fill="#92400E"/>
+
+    <!-- Bell Capital (Lotus base) -->
+    <path d="M 37,55.5 C 37,59 42,63 50,63 C 58,63 63,59 63,55.5 Z" fill="url(#upsc-gold)"/>
+    <rect x="32" y="63" width="36" height="3" rx="1.5" fill="#FEF3C7"/>
+  </g>
+
+  <!-- Banner / Motto: सत्यमेव जयते -->
+  <path d="M 28,68 Q 50,72 72,68 L 70,74 Q 50,77 30,74 Z" fill="#D97706"/>
+  <text x="50" y="73" fill="#FFFFFF" font-size="4.5" font-family="'Noto Sans Devanagari', sans-serif" font-weight="700" text-anchor="middle">सत्यमेव जयते</text>
+
+  <!-- Arc text: संघ लोक सेवा आयोग • UPSC -->
+  <text x="50" y="85" fill="#FEF3C7" font-size="5" font-family="'Outfit', sans-serif" font-weight="800" text-anchor="middle" letter-spacing="1">U P S C</text>
+  <text x="50" y="14" fill="#FDE68A" font-size="3.5" font-family="'Noto Sans Devanagari', sans-serif" font-weight="600" text-anchor="middle">संघ लोक सेवा आयोग</text>
+</svg>

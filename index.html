@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobVani – India's Government Jobs & Recruitment Portal</title>
+  <meta name="description" content="JobVani – Your one-stop portal for Government Jobs, Recruitments, Internships, and Entrance Tests in India. Explore SSC, UPSC, Banking, Defence, Railway, State PSC and more." />
+  <meta name="keywords" content="government jobs India, sarkari naukri, UPSC, SSC, banking jobs, railway jobs, defence recruitment, internships, entrance exams" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=3" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-brand" href="#" id="brand-link">
+        <div class="brand-icon"><img src="icons/brand_logo.svg" alt="JobVani" class="brand-icon-img" /></div>
+        <div class="brand-text">
+          <span class="brand-main">JobVani</span>
+          <span class="brand-sub">सरकारी नौकरी पोर्टल</span>
+        </div>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#" class="nav-link active" data-page="home" id="nav-home">Home</a>
+        <a href="#" class="nav-link" data-page="jobs" id="nav-jobs">Jobs</a>
+        <a href="#" class="nav-link" data-page="internships" id="nav-internships">Internships</a>
+        <a href="#" class="nav-link" data-page="entrance" id="nav-entrance">Entrance Tests</a>
+        <a href="#" class="nav-link" data-page="alerts" id="nav-alerts">📢 Alerts</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-notify" id="btn-notify-top" onclick="showPage('alerts')">
+          <span class="notify-dot"></span>🔔
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════ PAGE: HOME ════════════════════════════ -->
+  <div id="page-home" class="page active">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-particle" style="--x:10%;--y:20%;--s:80px;--d:6s"></div>
+        <div class="hero-particle" style="--x:80%;--y:15%;--s:120px;--d:8s"></div>
+        <div class="hero-particle" style="--x:60%;--y:70%;--s:60px;--d:5s"></div>
+        <div class="hero-particle" style="--x:30%;--y:60%;--s:100px;--d:9s"></div>
+        <div class="hero-particle" style="--x:90%;--y:50%;--s:70px;--d:7s"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">🇮🇳 India's Trusted Government Career Portal</div>
+        <h1 class="hero-title">
+          Find Your <span class="gradient-text">सरकारी नौकरी</span><br/>Dream Government Career
+        </h1>
+        <p class="hero-subtitle">Explore thousands of Government Jobs, Internships &amp; Entrance Tests across all categories — SSC, UPSC, Banking, Railway, Defence &amp; more.</p>
+        <div class="hero-search-box">
+          <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="hero-search" class="hero-input" placeholder="Search jobs, exams, departments…" />
+            <button class="search-btn" onclick="performSearch()">Search</button>
+          </div>
+          <div class="search-tags">
+            <button class="tag-pill" onclick="quickFilter('UPSC')">UPSC</button>
+            <button class="tag-pill" onclick="quickFilter('SSC')">SSC</button>
+            <button class="tag-pill" onclick="quickFilter('Banking')">Banking</button>
+            <button class="tag-pill" onclick="quickFilter('Railway')">Railway</button>
+            <button class="tag-pill" onclick="quickFilter('Defence')">Defence</button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- MARQUEE ALERTS -->
+    <div class="alert-marquee">
+      <div class="marquee-label">🔴 LIVE</div>
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>📢 RRB NTPC Graduate Level 2026 – 3,548 Posts Open</span>
+          <span>📢 RRB NTPC Under Graduate 2026 – 1,688 Posts Open</span>
+          <span>📢 UPESSC Assistant Teacher (TGT) – 17,735 Vacancies Running</span>
+          <span>📢 Odisha Police Constable &amp; Firefighter – 7,268 Posts Open</span>
+          <span>📢 UCO Bank &amp; LIC HFL Apprentice 2026 – Applications Active</span>
+          <span>📢 UPSC Civil Services 2026 – Preliminary Examination Notification</span>
+          <span>📢 Indian Army 10+2 TES 57th &amp; TGC-145 Course Active</span>
+          <span>📢 NWR Jaipur Railway Apprentice – 2,008 Vacancies</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE AUTO-SYNC BANNER -->
+    <div class="live-sync-banner">
+      <div class="container sync-inner">
+        <div class="sync-status">
+          <span class="sync-indicator">🟢</span>
+          <span class="sync-title">Live Auto-Update Active</span>
+          <span class="sync-divider">•</span>
+          <span class="sync-desc" id="sync-status-text">Real-time sync with 193,230+ vacancies across Bank, Railway, SSC, UPSC, Defence &amp; States</span>
+        </div>
+        <div class="sync-actions">
+          <span class="sync-time" id="sync-last-time">⏳ Synced: Just now</span>
+          <button class="btn-sync-refresh" id="btn-sync-now" onclick="triggerManualSync()" title="Fetch newest public openings">
+            <span class="refresh-icon">🔄</span> Sync Live Data
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="section categories-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Browse by Category</div>
+          <h2 class="section-title">All Government Job Categories</h2>
+          <p class="section-sub">Explore every sector of India's vast public employment landscape</p>
+        </div>
+        <div class="categories-grid" id="categories-grid"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED JOBS -->
+    <section class="section featured-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">🔥 Hot Openings</div>
+          <h2 class="section-title">Latest Government Recruitments</h2>
+        </div>
+        <div class="tabs-bar">
+          <button class="tab-btn active" data-tab="all" onclick="filterJobs('all', this)">All</button>
+          <button class="tab-btn" data-tab="central" onclick="filterJobs('central', this)">Central Govt</button>
+          <button class="tab-btn" data-tab="state" onclick="filterJobs('state', this)">State Govt</button>
+          <button class="tab-btn" data-tab="psu" onclick="filterJobs('psu', this)">PSU</button>
+          <button class="tab-btn" data-tab="banking" onclick="filterJobs('banking', this)">Banking</button>
+          <button class="tab-btn" data-tab="defence" onclick="filterJobs('defence', this)">Defence</button>
+        </div>
+        <div class="jobs-grid" id="jobs-grid"></div>
+        <div class="see-all-btn-wrap">
+          <button class="btn-primary" onclick="showPage('jobs')">View All Jobs →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK ACCESS -->
+    <section class="section quick-access-section">
+      <div class="container">
+        <div class="quick-grid">
+          <div class="quick-card" onclick="showPage('internships')">
+            <div class="quick-icon">🎓</div>
+            <h3>Government Internships</h3>
+            <p>Ministry, PSU &amp; Research Institution internship programs for students</p>
+            <div class="quick-count">5,200+ Programs</div>
+            <div class="quick-arrow">→</div>
+          </div>
+          <div class="quick-card featured-card" onclick="showPage('entrance')">
+            <div class="quick-badge-small">Popular</div>
+            <div class="quick-icon">📝</div>
+            <h3>Entrance Tests</h3>
+            <p>JEE, NEET, GATE, CLAT &amp; all government institute entrance exams</p>
+            <div class="quick-count">320+ Exams</div>
+            <div class="quick-arrow">→</div>
+          </div>
+          <div class="quick-card" onclick="showPage('alerts')">
+            <div class="quick-icon">🔔</div>
+            <h3>Job Alerts</h3>
+            <p>Subscribe and get instant notifications for new government openings</p>
+            <div class="quick-count">Free Service</div>
+            <div class="quick-arrow">→</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING DEADLINES -->
+    <section class="section deadline-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">⏰ Closing Soon</div>
+          <h2 class="section-title">Application Deadlines</h2>
+        </div>
+        <div class="deadlines-list" id="deadlines-list"></div>
+      </div>
+    </section>
+
+    <!-- STATE WISE -->
+    <section class="section states-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">🗺️ State Wise</div>
+          <h2 class="section-title">Jobs by State</h2>
+        </div>
+        <div class="states-grid" id="states-grid"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════════════════ PAGE: JOBS ═══════════════════════════ -->
+  <div id="page-jobs" class="page">
+    <div class="page-hero-mini jobs-bg">
+      <div class="container">
+        <h1>All Active Government Job Openings</h1>
+        <p>Live recruitment notifications across Bank, Railway, SSC, UPSC, Defence &amp; State Boards</p>
+      </div>
+    </div>
+
+    <!-- Quick Department Filter Bar (GovtJobGuru Style) -->
+    <div class="dept-quick-nav-bar">
+      <div class="container">
+        <div class="dept-nav-title">⚡ Quick Browse by Sector:</div>
+        <div class="dept-chips-scroll">
+          <button class="dept-chip active" onclick="filterByDeptQuick('all', this)"><img src="icons/brand_logo.svg" class="chip-icon" /> All Openings</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('bank', this)"><img src="icons/banking.svg" class="chip-icon" /> Bank Jobs</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('railway', this)"><img src="icons/railway.svg" class="chip-icon" /> Railway Jobs</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('ssc', this)"><img src="icons/ssc.svg" class="chip-icon" /> SSC &amp; Subordinate</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('upsc', this)"><img src="icons/upsc.svg" class="chip-icon" /> UPSC / Civil</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('defence', this)"><img src="icons/defence.svg" class="chip-icon" /> Defence &amp; Police</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('postoffice', this)"><img src="icons/indiapost.svg" class="chip-icon" /> Post Office</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('psu', this)"><img src="icons/psu.svg" class="chip-icon" /> PSUs &amp; Metro</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('teaching', this)"><img src="icons/teaching.svg" class="chip-icon" /> Teaching</button>
+          <button class="dept-chip" onclick="filterByDeptQuick('medical', this)"><img src="icons/medical.svg" class="chip-icon" /> Medical &amp; Health</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container page-body">
+      <div class="filter-sidebar-layout">
+        <aside class="filter-sidebar" id="filter-sidebar">
+          <div class="filter-sidebar-header">
+            <span class="filter-header-title">⚡ Filter Options</span>
+            <button class="filter-header-reset" onclick="clearFilters()" title="Reset all filters">Reset ↺</button>
+          </div>
+          <div class="filter-section">
+            <h4>Category</h4>
+            <div class="filter-checkboxes" id="filter-categories"></div>
+          </div>
+          <div class="filter-section">
+            <h4>Experience Level</h4>
+            <div class="filter-checkboxes">
+              <label><input type="checkbox" id="fl-fresher" onchange="applyFilters()" /> Fresher / 10th / ITI</label>
+              <label><input type="checkbox" id="fl-12th" onchange="applyFilters()" /> 12th Pass</label>
+              <label><input type="checkbox" id="fl-grad" onchange="applyFilters()" /> Graduate / Degree</label>
+              <label><input type="checkbox" id="fl-pg" onchange="applyFilters()" /> Post Graduate / MBA</label>
+              <label><input type="checkbox" id="fl-exp" onchange="applyFilters()" /> Technical / Diploma</label>
+            </div>
+          </div>
+          <div class="filter-section">
+            <h4>State / UT</h4>
+            <select class="filter-select" id="filter-state" onchange="applyFilters()">
+              <option value="">All States &amp; UTs</option>
+              <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
+              <option>Delhi</option><option>Gujarat</option><option>Haryana</option>
+              <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+              <option>Maharashtra</option><option>Odisha</option><option>Punjab</option>
+              <option>Rajasthan</option><option>Tamil Nadu</option><option>Telangana</option>
+              <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
+            </select>
+          </div>
+          <div class="filter-section">
+            <h4>Live Urgency</h4>
+            <select class="filter-select" id="filter-urgency" onchange="applyFilters()">
+              <option value="">All Deadlines</option>
+              <option value="urgent">Closing in &lt; 3 Days (Urgent)</option>
+              <option value="warning">Closing in &lt; 7 Days</option>
+              <option value="ok">Open (&gt; 7 Days Left)</option>
+            </select>
+          </div>
+          <div class="filter-actions">
+            <button class="btn-outline" onclick="clearFilters()" style="width: 100%;">Reset All Filters</button>
+          </div>
+        </aside>
+        <div class="jobs-main" id="jobs-main">
+          <div class="jobs-topbar">
+            <div class="results-count" id="results-count">Showing all jobs</div>
+            <div class="topbar-controls">
+              <!-- View Toggle: Cards vs Table -->
+              <div class="view-mode-toggle">
+                <button class="btn-view-toggle active" id="btn-view-cards" onclick="setViewMode('cards')" title="Card View">
+                  <span class="icon">🗂️</span> Cards
+                </button>
+                <button class="btn-view-toggle" id="btn-view-table" onclick="setViewMode('table')" title="Table Directory View (GovtJobGuru Style)">
+                  <span class="icon">📋</span> Table Directory
+                </button>
+              </div>
+              <div class="sort-wrap">
+                <label>Sort:</label>
+                <select class="filter-select" id="sort-select" onchange="sortJobs()">
+                  <option>Newest First</option>
+                  <option>Deadline Soon</option>
+                  <option>Most Vacancies</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Individual Data Scroll Layer -->
+          <div class="jobs-data-scroll-layer" id="jobs-data-scroll-layer">
+            <!-- Cards View Container -->
+            <div class="jobs-list-full active" id="jobs-list-full"></div>
+
+            <!-- Table Directory Container (GovtJobGuru style TablePress) -->
+            <div class="jobs-table-container" id="jobs-table-wrap" style="display:none">
+              <div class="table-responsive">
+                <table class="govt-jobs-table" id="govt-jobs-table">
+                  <thead>
+                    <tr>
+                      <th style="width:160px">Organization</th>
+                      <th style="width:90px">Posts</th>
+                      <th>Post Name</th>
+                      <th>Qualification</th>
+                      <th style="width:165px">Deadline (DD-MM-YY)</th>
+                      <th style="width:140px; text-align:center">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="govt-table-body">
+                    <!-- Populated by JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PAGE: INTERNSHIPS ═══════════════════════════ -->
+  <div id="page-internships" class="page">
+    <div class="page-hero-mini intern-bg">
+      <div class="container">
+        <h1>Government Internships</h1>
+        <p>Gain real-world experience in Ministries, PSUs, Research Labs &amp; more</p>
+      </div>
+    </div>
+    <div class="container page-body">
+      <div class="intern-filters">
+        <button class="tab-btn active" onclick="filterInternships('all', this)">All Programs</button>
+        <button class="tab-btn" onclick="filterInternships('ministry', this)">Ministry</button>
+        <button class="tab-btn" onclick="filterInternships('psu', this)">PSU</button>
+        <button class="tab-btn" onclick="filterInternships('research', this)">Research Labs</button>
+        <button class="tab-btn" onclick="filterInternships('defence', this)">Defence</button>
+        <button class="tab-btn" onclick="filterInternships('space', this)">Space/ISRO</button>
+      </div>
+      <div class="intern-grid" id="intern-grid"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PAGE: ENTRANCE TESTS ═══════════════════════════ -->
+  <div id="page-entrance" class="page">
+    <div class="page-hero-mini entrance-bg">
+      <div class="container">
+        <h1>Government Entrance Tests</h1>
+        <p>All major national &amp; state-level entrance exams for government institutes</p>
+      </div>
+    </div>
+    <div class="container page-body">
+      <div class="entrance-tabs">
+        <button class="tab-btn active" onclick="filterEntrance('all', this)">All Exams</button>
+        <button class="tab-btn" onclick="filterEntrance('engineering', this)">Engineering</button>
+        <button class="tab-btn" onclick="filterEntrance('medical', this)">Medical</button>
+        <button class="tab-btn" onclick="filterEntrance('law', this)">Law</button>
+        <button class="tab-btn" onclick="filterEntrance('management', this)">Management</button>
+        <button class="tab-btn" onclick="filterEntrance('civil', this)">Civil Services</button>
+        <button class="tab-btn" onclick="filterEntrance('defence', this)">Defence</button>
+        <button class="tab-btn" onclick="filterEntrance('teaching', this)">Teaching</button>
+      </div>
+      <div class="entrance-grid" id="entrance-grid"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PAGE: ALERTS ═══════════════════════════ -->
+  <div id="page-alerts" class="page">
+    <div class="page-hero-mini alerts-bg">
+      <div class="container">
+        <h1>Job Alerts &amp; Notifications</h1>
+        <p>Never miss a government job opportunity — subscribe for instant alerts</p>
+      </div>
+    </div>
+    <div class="container page-body">
+      <div class="alerts-layout">
+        <div class="alert-subscribe-card">
+          <div class="alert-card-icon">🔔</div>
+          <h2>Get Personalized Job Alerts</h2>
+          <p>Enter your details and we'll send you notifications matching your profile — completely free!</p>
+          <form class="alert-form" onsubmit="subscribeAlerts(event)">
+            <input type="text" id="alert-name" placeholder="Your Name" required />
+            <input type="email" id="alert-email" placeholder="Email Address" required />
+            <input type="tel" id="alert-phone" placeholder="Mobile Number (optional)" />
+            <select id="alert-category">
+              <option value="">Select Preferred Category</option>
+              <option>UPSC / IAS</option><option>SSC</option><option>Banking</option>
+              <option>Railway</option><option>Defence</option><option>State PSC</option>
+              <option>Teaching</option><option>Engineering / PSU</option><option>Internship</option>
+            </select>
+            <select id="alert-qualification">
+              <option value="">Highest Qualification</option>
+              <option>10th Pass</option><option>12th Pass</option><option>Graduate</option>
+              <option>Post Graduate</option><option>PhD</option>
+            </select>
+            <button type="submit" class="btn-primary full-width">🔔 Subscribe to Alerts</button>
+          </form>
+          <div class="alert-success" id="alert-success" style="display:none">
+            ✅ You're subscribed! We'll notify you of matching government jobs.
+          </div>
+        </div>
+        <div class="recent-alerts-panel">
+          <h3>Recent Notifications</h3>
+          <div class="recent-alerts-list" id="recent-alerts-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOB DETAIL MODAL -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+    <div class="modal-box" id="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">🏛️ JobVani</div>
+          <p class="footer-tagline">India's trusted portal for Government Jobs, Internships &amp; Entrance Exams</p>
+          <div class="footer-social">
+            <a href="#" title="Telegram">📱</a>
+            <a href="#" title="WhatsApp">💬</a>
+            <a href="#" title="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="#" onclick="showPage('jobs')">Latest Jobs</a>
+          <a href="#" onclick="showPage('internships')">Internships</a>
+          <a href="#" onclick="showPage('entrance')">Entrance Tests</a>
+          <a href="#" onclick="showPage('alerts')">Job Alerts</a>
+          <a href="http://127.0.0.1:8000/admin/" target="_blank" style="color:var(--saffron); font-weight:700;">🔒 Admin Login</a>
+        </div>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <a href="#">UPSC / Civil Services</a>
+          <a href="#">SSC Exams</a>
+          <a href="#">Banking &amp; Finance</a>
+          <a href="#">Railway Recruitment</a>
+          <a href="#">Defence Jobs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Exam Calendar 2025</a>
+          <a href="#">Admit Cards</a>
+          <a href="#">Results</a>
+          <a href="#">Cut-off Marks</a>
+          <a href="#">Syllabus / Pattern</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 JobVani. All rights reserved. | Disclaimer: This portal aggregates public information. Always verify from official government sources before applying.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIVE TOAST NOTIFICATION -->
+  <div id="live-toast" class="live-toast"></div>
+
+  <script src="app.js?v=7"></script>
+</body>
+</html>
