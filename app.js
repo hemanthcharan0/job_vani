@@ -1792,21 +1792,12 @@ function showLiveToast(msg) {
 }
 
 /* ─── DJANGO BACKEND SYNC INTEGRATION ────────────────────────────── */
-const DJANGO_API_BASE = 'http://127.0.0.1:8000/api';
-
-// Dynamically sync footer Admin Login link with active backend host
-function updateAdminPortalLink() {
-  const adminLink = document.getElementById('footer-admin-link');
-  if (adminLink) {
-    const adminUrl = DJANGO_API_BASE.replace(/\/api\/?$/, '') + '/admin/';
-    adminLink.href = adminUrl;
-  }
-}
+const DJANGO_API_BASE = 'https://jobvani-backend.onrender.com/api';
 
 async function fetchFromDjangoBackend() {
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2000);
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
     const res = await fetch(`${DJANGO_API_BASE}/all/`, { signal: controller.signal });
     clearTimeout(timeoutId);
     if (!res.ok) return 0;
@@ -2686,7 +2677,6 @@ document.addEventListener('DOMContentLoaded', () => {
   renderJobsGrid();
   renderStates();
   initAutoSync();
-  updateAdminPortalLink();
 
   // Route initial hash if present (e.g. #jobs)
   if (window.location.hash) {
