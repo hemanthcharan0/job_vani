@@ -2182,6 +2182,7 @@ function applyFilters() {
   renderJobsTable(filtered);
   const scrollLayer = document.getElementById('jobs-data-scroll-layer');
   if (scrollLayer) scrollLayer.scrollTop = 0;
+  updateActiveFilterBadge();
 }
 
 function renderFullJobsList(jobs) {
@@ -2304,6 +2305,34 @@ function clearFilters() {
   const firstChip = document.querySelector('.dept-chip');
   if (firstChip) firstChip.classList.add('active');
   applyFilters();
+}
+
+function toggleMobileFilters() {
+  if (window.innerWidth <= 900) {
+    const sidebar = document.getElementById('filter-sidebar');
+    if (sidebar) {
+      sidebar.classList.toggle('open');
+    }
+  }
+}
+
+function updateActiveFilterBadge() {
+  const badge = document.getElementById('mobile-filter-badge');
+  if (!badge) return;
+  const selectedCatCount = document.querySelectorAll('.cat-filter-cb:checked').length;
+  const qualCount = ['fl-fresher', 'fl-12th', 'fl-grad', 'fl-pg', 'fl-exp'].filter(id => {
+    const el = document.getElementById(id);
+    return el && el.checked;
+  }).length;
+  const stateActive = document.getElementById('filter-state') && document.getElementById('filter-state').value ? 1 : 0;
+  const urgencyActive = document.getElementById('filter-urgency') && document.getElementById('filter-urgency').value ? 1 : 0;
+  const total = selectedCatCount + qualCount + stateActive + urgencyActive;
+  if (total > 0) {
+    badge.textContent = `${total} Active`;
+    badge.style.display = 'inline-block';
+  } else {
+    badge.style.display = 'none';
+  }
 }
 
 /* ─── RENDER: INTERNSHIPS ────────────────────────────────────────── */

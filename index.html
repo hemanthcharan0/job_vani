@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
 </head>
 <body>
 
@@ -233,47 +233,57 @@
     <div class="container page-body">
       <div class="filter-sidebar-layout">
         <aside class="filter-sidebar" id="filter-sidebar">
-          <div class="filter-sidebar-header">
-            <span class="filter-header-title">⚡ Filter Options</span>
-            <button class="filter-header-reset" onclick="clearFilters()" title="Reset all filters">Reset ↺</button>
-          </div>
-          <div class="filter-section">
-            <h4>Category</h4>
-            <div class="filter-checkboxes" id="filter-categories"></div>
-          </div>
-          <div class="filter-section">
-            <h4>Experience Level</h4>
-            <div class="filter-checkboxes">
-              <label><input type="checkbox" id="fl-fresher" onchange="applyFilters()" /> Fresher / 10th / ITI</label>
-              <label><input type="checkbox" id="fl-12th" onchange="applyFilters()" /> 12th Pass</label>
-              <label><input type="checkbox" id="fl-grad" onchange="applyFilters()" /> Graduate / Degree</label>
-              <label><input type="checkbox" id="fl-pg" onchange="applyFilters()" /> Post Graduate / MBA</label>
-              <label><input type="checkbox" id="fl-exp" onchange="applyFilters()" /> Technical / Diploma</label>
+          <div class="filter-sidebar-header" id="filter-sidebar-header" onclick="toggleMobileFilters()">
+            <div class="filter-header-title-group">
+              <span class="filter-header-title">⚡ Filter Options</span>
+              <span class="mobile-filter-badge" id="mobile-filter-badge" style="display:none;">0 Active</span>
+            </div>
+            <div class="filter-header-controls">
+              <button class="filter-header-reset" onclick="event.stopPropagation(); clearFilters()" title="Reset all filters">Reset ↺</button>
+              <button class="mobile-filter-toggle-btn" aria-label="Toggle filters" type="button">
+                <span class="filter-arrow-icon">▼</span>
+              </button>
             </div>
           </div>
-          <div class="filter-section">
-            <h4>State / UT</h4>
-            <select class="filter-select" id="filter-state" onchange="applyFilters()">
-              <option value="">All States &amp; UTs</option>
-              <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
-              <option>Delhi</option><option>Gujarat</option><option>Haryana</option>
-              <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
-              <option>Maharashtra</option><option>Odisha</option><option>Punjab</option>
-              <option>Rajasthan</option><option>Tamil Nadu</option><option>Telangana</option>
-              <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
-            </select>
-          </div>
-          <div class="filter-section">
-            <h4>Live Urgency</h4>
-            <select class="filter-select" id="filter-urgency" onchange="applyFilters()">
-              <option value="">All Deadlines</option>
-              <option value="urgent">Closing in &lt; 3 Days (Urgent)</option>
-              <option value="warning">Closing in &lt; 7 Days</option>
-              <option value="ok">Open (&gt; 7 Days Left)</option>
-            </select>
-          </div>
-          <div class="filter-actions">
-            <button class="btn-outline" onclick="clearFilters()" style="width: 100%;">Reset All Filters</button>
+          <div class="filter-sidebar-content" id="filter-sidebar-content">
+            <div class="filter-section">
+              <h4>Category</h4>
+              <div class="filter-checkboxes" id="filter-categories"></div>
+            </div>
+            <div class="filter-section">
+              <h4>Experience Level</h4>
+              <div class="filter-checkboxes">
+                <label><input type="checkbox" id="fl-fresher" onchange="applyFilters()" /> Fresher / 10th / ITI</label>
+                <label><input type="checkbox" id="fl-12th" onchange="applyFilters()" /> 12th Pass</label>
+                <label><input type="checkbox" id="fl-grad" onchange="applyFilters()" /> Graduate / Degree</label>
+                <label><input type="checkbox" id="fl-pg" onchange="applyFilters()" /> Post Graduate / MBA</label>
+                <label><input type="checkbox" id="fl-exp" onchange="applyFilters()" /> Technical / Diploma</label>
+              </div>
+            </div>
+            <div class="filter-section">
+              <h4>State / UT</h4>
+              <select class="filter-select" id="filter-state" onchange="applyFilters()">
+                <option value="">All States &amp; UTs</option>
+                <option>Andhra Pradesh</option><option>Assam</option><option>Bihar</option>
+                <option>Delhi</option><option>Gujarat</option><option>Haryana</option>
+                <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+                <option>Maharashtra</option><option>Odisha</option><option>Punjab</option>
+                <option>Rajasthan</option><option>Tamil Nadu</option><option>Telangana</option>
+                <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
+              </select>
+            </div>
+            <div class="filter-section">
+              <h4>Live Urgency</h4>
+              <select class="filter-select" id="filter-urgency" onchange="applyFilters()">
+                <option value="">All Deadlines</option>
+                <option value="urgent">Closing in &lt; 3 Days (Urgent)</option>
+                <option value="warning">Closing in &lt; 7 Days</option>
+                <option value="ok">Open (&gt; 7 Days Left)</option>
+              </select>
+            </div>
+            <div class="filter-actions">
+              <button class="btn-outline" onclick="clearFilters()" style="width: 100%;">Reset All Filters</button>
+            </div>
           </div>
         </aside>
         <div class="jobs-main" id="jobs-main">
@@ -474,6 +484,6 @@
   <!-- LIVE TOAST NOTIFICATION -->
   <div id="live-toast" class="live-toast"></div>
 
-  <script src="app.js?v=7"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
