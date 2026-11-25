@@ -4,22 +4,22 @@
 
 /* ─── CATEGORIES ─────────────────────────────────────────────────── */
 const CATEGORIES = [
-  {icon:'icons/upsc.svg',        name:'UPSC / Civil Services', count:'1,105+ Openings', tag:'upsc'},
-  {icon:'icons/ssc.svg',         name:'SSC & Subordinate',     count:'32,450+ Openings', tag:'ssc'},
-  {icon:'icons/banking.svg',     name:'Bank / Finance',        count:'14,500+ Openings', tag:'bank'},
-  {icon:'icons/railway.svg',     name:'Railway & Metro',       count:'18,800+ Openings', tag:'railway'},
-  {icon:'icons/defence.svg',     name:'Defence & Armed Forces', count:'48,500+ Openings', tag:'defence'},
-  {icon:'icons/police.svg',      name:'Police & Paramilitary', count:'11,200+ Openings', tag:'defence'},
-  {icon:'icons/psu.svg',         name:'PSU & Navratna',        count:'4,800+ Openings', tag:'psu'},
-  {icon:'icons/teaching.svg',    name:'Teaching & Education',  count:'38,700+ Openings', tag:'teaching'},
-  {icon:'icons/medical.svg',     name:'Health & Medical',      count:'3,400+ Openings', tag:'medical'},
-  {icon:'icons/isro.svg',        name:'ISRO / Space Tech',     count:'620+ Openings', tag:'psu'},
-  {icon:'icons/drdo.svg',        name:'DRDO & Defence R&D',    count:'780+ Openings', tag:'defence'},
-  {icon:'icons/indiapost.svg',   name:'India Post / Postal',   count:'44,228+ Openings', tag:'postoffice'},
-  {icon:'icons/power.svg',       name:'Power & Energy',        count:'1,400+ Openings', tag:'psu'},
-  {icon:'icons/agriculture.svg', name:'Agriculture & NABARD',  count:'640+ Openings', tag:'bank'},
-  {icon:'icons/state_psc.svg',   name:'State PSC Boards',      count:'15,800+ Openings', tag:'state'},
-  {icon:'icons/judiciary.svg',   name:'Judiciary & Legal',     count:'520+ Openings', tag:'central'},
+  { icon: 'icons/upsc.svg', name: 'UPSC / Civil Services', count: '1,105+ Openings', tag: 'upsc' },
+  { icon: 'icons/ssc.svg', name: 'SSC & Subordinate', count: '32,450+ Openings', tag: 'ssc' },
+  { icon: 'icons/banking.svg', name: 'Bank / Finance', count: '14,500+ Openings', tag: 'bank' },
+  { icon: 'icons/railway.svg', name: 'Railway & Metro', count: '18,800+ Openings', tag: 'railway' },
+  { icon: 'icons/defence.svg', name: 'Defence & Armed Forces', count: '48,500+ Openings', tag: 'defence' },
+  { icon: 'icons/police.svg', name: 'Police & Paramilitary', count: '11,200+ Openings', tag: 'defence' },
+  { icon: 'icons/psu.svg', name: 'PSU & Navratna', count: '4,800+ Openings', tag: 'psu' },
+  { icon: 'icons/teaching.svg', name: 'Teaching & Education', count: '38,700+ Openings', tag: 'teaching' },
+  { icon: 'icons/medical.svg', name: 'Health & Medical', count: '3,400+ Openings', tag: 'medical' },
+  { icon: 'icons/isro.svg', name: 'ISRO / Space Tech', count: '620+ Openings', tag: 'psu' },
+  { icon: 'icons/drdo.svg', name: 'DRDO & Defence R&D', count: '780+ Openings', tag: 'defence' },
+  { icon: 'icons/indiapost.svg', name: 'India Post / Postal', count: '44,228+ Openings', tag: 'postoffice' },
+  { icon: 'icons/power.svg', name: 'Power & Energy', count: '1,400+ Openings', tag: 'psu' },
+  { icon: 'icons/agriculture.svg', name: 'Agriculture & NABARD', count: '640+ Openings', tag: 'bank' },
+  { icon: 'icons/state_psc.svg', name: 'State PSC Boards', count: '15,800+ Openings', tag: 'state' },
+  { icon: 'icons/judiciary.svg', name: 'Judiciary & Legal', count: '520+ Openings', tag: 'central' },
 ];
 
 /* ─── COMPREHENSIVE REAL-TIME JOBS DATA (GovtJobGuru + Official Notifications) ─── */
@@ -1577,24 +1577,24 @@ let ENTRANCE_EXAMS = [
 
 /* ─── STATES DATA ─────────────────────────────────────────────────── */
 const STATES = [
-  {name:'Uttar Pradesh',  count:'34,800+ Vacancies'},
-  {name:'Maharashtra',    count:'18,200+ Vacancies'},
-  {name:'Bihar',          count:'14,500+ Vacancies'},
-  {name:'Odisha',         count:'9,800+ Vacancies'},
-  {name:'Rajasthan',      count:'8,900+ Vacancies'},
-  {name:'Delhi NCR',      count:'12,400+ Vacancies'},
-  {name:'Madhya Pradesh', count:'7,900+ Vacancies'},
-  {name:'West Bengal',    count:'6,800+ Vacancies'},
-  {name:'Gujarat',        count:'5,700+ Vacancies'},
-  {name:'Karnataka',      count:'5,400+ Vacancies'},
-  {name:'Tamil Nadu',     count:'5,100+ Vacancies'},
-  {name:'Telangana',      count:'4,800+ Vacancies'},
-  {name:'Andhra Pradesh', count:'4,600+ Vacancies'},
-  {name:'Haryana',        count:'4,200+ Vacancies'},
-  {name:'Punjab',         count:'3,900+ Vacancies'},
-  {name:'Uttarakhand',    count:'3,100+ Vacancies'},
-  {name:'Kerala',         count:'2,900+ Vacancies'},
-  {name:'Assam & NE',     count:'4,500+ Vacancies'},
+  { name: 'Uttar Pradesh', count: '34,800+ Vacancies' },
+  { name: 'Maharashtra', count: '18,200+ Vacancies' },
+  { name: 'Bihar', count: '14,500+ Vacancies' },
+  { name: 'Odisha', count: '9,800+ Vacancies' },
+  { name: 'Rajasthan', count: '8,900+ Vacancies' },
+  { name: 'Delhi NCR', count: '12,400+ Vacancies' },
+  { name: 'Madhya Pradesh', count: '7,900+ Vacancies' },
+  { name: 'West Bengal', count: '6,800+ Vacancies' },
+  { name: 'Gujarat', count: '5,700+ Vacancies' },
+  { name: 'Karnataka', count: '5,400+ Vacancies' },
+  { name: 'Tamil Nadu', count: '5,100+ Vacancies' },
+  { name: 'Telangana', count: '4,800+ Vacancies' },
+  { name: 'Andhra Pradesh', count: '4,600+ Vacancies' },
+  { name: 'Haryana', count: '4,200+ Vacancies' },
+  { name: 'Punjab', count: '3,900+ Vacancies' },
+  { name: 'Uttarakhand', count: '3,100+ Vacancies' },
+  { name: 'Kerala', count: '2,900+ Vacancies' },
+  { name: 'Assam & NE', count: '4,500+ Vacancies' },
 ];
 
 /* ─── RECENT ALERTS (DYNAMIC FEED) ───────────────────────────────── */
@@ -1667,7 +1667,7 @@ function getDaysLeft(dateStr) {
 
 function formatDate(dateStr) {
   if (!dateStr) return '';
-  return new Date(dateStr).toLocaleDateString('en-IN', {day:'2-digit', month:'short', year:'numeric'});
+  return new Date(dateStr).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
 }
 
 function formatDateDDMMYY(dateStr) {
@@ -1682,7 +1682,7 @@ function formatDateDDMMYY(dateStr) {
 function getDeadlineBadgeHTML(lastDateStr) {
   const days = getDaysLeft(lastDateStr);
   const dateFormatted = formatDateDDMMYY(lastDateStr);
-  
+
   if (days <= 0) {
     return `<span class="tp-deadline-urgent">Expired <span class="tp-deadline-days">(Closed)</span></span>`;
   } else if (days <= 3) {
@@ -1841,7 +1841,7 @@ async function fetchFromDjangoBackend() {
       applyFilters();
     }
     return count;
-  } catch(e) {
+  } catch (e) {
     // Graceful offline fallback if Django server is not currently running
     return 0;
   }
@@ -1960,12 +1960,12 @@ function jobCard(j) {
 function renderDynamicDeadlines() {
   const container = document.getElementById('deadlines-list');
   if (!container) return;
-  
+
   // Sort JOBS by closest days remaining
   const activeJobs = [...JOBS]
     .map(j => ({ ...j, daysLeft: getDaysLeft(j.lastDate) }))
     .filter(j => j.daysLeft > 0)
-    .sort((a,b) => a.daysLeft - b.daysLeft)
+    .sort((a, b) => a.daysLeft - b.daysLeft)
     .slice(0, 6);
 
   container.innerHTML = activeJobs.map(d => {
@@ -2049,13 +2049,13 @@ function applyFilters() {
   const selectedCatEls = [...document.querySelectorAll('.cat-filter-cb:checked')];
 
   const fresher = document.getElementById('fl-fresher') && document.getElementById('fl-fresher').checked;
-  const pass12  = document.getElementById('fl-12th')    && document.getElementById('fl-12th').checked;
-  const grad    = document.getElementById('fl-grad')    && document.getElementById('fl-grad').checked;
-  const pg      = document.getElementById('fl-pg')      && document.getElementById('fl-pg').checked;
-  const exp     = document.getElementById('fl-exp')     && document.getElementById('fl-exp').checked;
+  const pass12 = document.getElementById('fl-12th') && document.getElementById('fl-12th').checked;
+  const grad = document.getElementById('fl-grad') && document.getElementById('fl-grad').checked;
+  const pg = document.getElementById('fl-pg') && document.getElementById('fl-pg').checked;
+  const exp = document.getElementById('fl-exp') && document.getElementById('fl-exp').checked;
   const anyQual = !fresher && !pass12 && !grad && !pg && !exp;
 
-  const stateVal   = document.getElementById('filter-state') ? document.getElementById('filter-state').value.trim().toLowerCase() : '';
+  const stateVal = document.getElementById('filter-state') ? document.getElementById('filter-state').value.trim().toLowerCase() : '';
   const urgencyVal = document.getElementById('filter-urgency') ? document.getElementById('filter-urgency').value.trim().toLowerCase() : '';
 
   let filtered = [...JOBS];
@@ -2066,10 +2066,10 @@ function applyFilters() {
     // 1. Multiple categories selected: filter jobs matching ANY of the checked categories
     const selectedKeys = selectedCatEls.map(el => el.value.split('/')[0].trim().toLowerCase());
     filtered = filtered.filter(j => {
-      const tag   = (j.tag      || '').toLowerCase();
-      const cat   = (j.category || '').toLowerCase();
-      const dept  = (j.dept     || '').toLowerCase();
-      const title = (j.title    || '').toLowerCase();
+      const tag = (j.tag || '').toLowerCase();
+      const cat = (j.category || '').toLowerCase();
+      const dept = (j.dept || '').toLowerCase();
+      const title = (j.title || '').toLowerCase();
       return selectedKeys.some(key =>
         tag.includes(key) || cat.includes(key) || dept.includes(key) || title.includes(key)
       );
@@ -2080,10 +2080,10 @@ function applyFilters() {
   } else if (currentDeptQuick !== 'all') {
     // 2. Otherwise if Quick Sector chip is active: filter strictly by Quick Sector
     filtered = filtered.filter(j => {
-      const tag   = (j.tag      || '').toLowerCase();
-      const cat   = (j.category || '').toLowerCase();
-      const dept  = (j.dept     || '').toLowerCase();
-      const title = (j.title    || '').toLowerCase();
+      const tag = (j.tag || '').toLowerCase();
+      const cat = (j.category || '').toLowerCase();
+      const dept = (j.dept || '').toLowerCase();
+      const title = (j.title || '').toLowerCase();
       return tag.includes(currentDeptQuick) || cat.includes(currentDeptQuick) || dept.includes(currentDeptQuick) || title.includes(currentDeptQuick);
     });
     const activeChip = document.querySelector('.dept-chip.active');
@@ -2095,10 +2095,10 @@ function applyFilters() {
     filtered = filtered.filter(j => {
       const q = (j.qualification || '').toLowerCase();
       if (fresher && (q.includes('10th') || q.includes('iti') || q.includes('fresher') || q.includes('matric'))) return true;
-      if (pass12  && (q.includes('12th') || q.includes('10+2') || q.includes('intermediate') || q.includes('+2'))) return true;
-      if (grad    && (q.includes('grad') || q.includes('degree') || q.includes('b.tech') || q.includes('b.e') || q.includes('b.sc') || q.includes('b.com'))) return true;
-      if (pg      && (q.includes('post') || q.includes('master') || q.includes('mba') || q.includes('m.sc') || q.includes('m.tech') || q.includes('ca'))) return true;
-      if (exp     && (q.includes('diploma') || q.includes('technical') || q.includes('exp'))) return true;
+      if (pass12 && (q.includes('12th') || q.includes('10+2') || q.includes('intermediate') || q.includes('+2'))) return true;
+      if (grad && (q.includes('grad') || q.includes('degree') || q.includes('b.tech') || q.includes('b.e') || q.includes('b.sc') || q.includes('b.com'))) return true;
+      if (pg && (q.includes('post') || q.includes('master') || q.includes('mba') || q.includes('m.sc') || q.includes('m.tech') || q.includes('ca'))) return true;
+      if (exp && (q.includes('diploma') || q.includes('technical') || q.includes('exp'))) return true;
       return false;
     });
   }
@@ -2137,12 +2137,12 @@ function applyFilters() {
       const fullText = `${loc} ${dept} ${title}`;
 
       // Strictly exclude generic national/all-India postings
-      const isPureNational = loc === 'all india' || 
-                             loc === 'pan india' || 
-                             loc === 'all india (state-wise vacancies)' ||
-                             loc === 'all india units' ||
-                             loc.includes('all postal circles') ||
-                             loc.includes('airports across india');
+      const isPureNational = loc === 'all india' ||
+        loc === 'pan india' ||
+        loc === 'all india (state-wise vacancies)' ||
+        loc === 'all india units' ||
+        loc.includes('all postal circles') ||
+        loc.includes('airports across india');
       if (isPureNational) return false;
 
       // If location starts with all india or pan india, exclude unless explicitly mentioning target state/city
@@ -2204,7 +2204,7 @@ function jobListCard(j) {
   let domain = '';
   try {
     domain = new URL(j.officialLink).hostname.replace(/^www\./, '');
-  } catch(e) {
+  } catch (e) {
     domain = 'gov portal';
   }
   return `
@@ -2281,11 +2281,11 @@ function renderJobsTable(jobs) {
 function sortJobs() {
   const val = document.getElementById('sort-select').value;
   if (val === 'Deadline Soon') {
-    JOBS.sort((a,b) => new Date(a.lastDate) - new Date(b.lastDate));
+    JOBS.sort((a, b) => new Date(a.lastDate) - new Date(b.lastDate));
   } else if (val === 'Most Vacancies') {
-    JOBS.sort((a,b) => (b.vacancies || 0) - (a.vacancies || 0));
+    JOBS.sort((a, b) => (b.vacancies || 0) - (a.vacancies || 0));
   } else {
-    JOBS.sort((a,b) => new Date(b.posted) - new Date(a.posted));
+    JOBS.sort((a, b) => new Date(b.posted) - new Date(a.posted));
   }
   applyFilters();
 }
@@ -2402,7 +2402,7 @@ function subscribeAlerts(e) {
   const success = document.getElementById('alert-success');
   if (success) {
     success.style.display = 'block';
-    success.scrollIntoView({behavior:'smooth', block:'nearest'});
+    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     setTimeout(() => success.style.display = 'none', 5000);
   }
 }
@@ -2415,7 +2415,7 @@ function openJobModal(id) {
   let domain = '';
   try {
     domain = new URL(j.officialLink).hostname.replace(/^www\./, '');
-  } catch(e) {
+  } catch (e) {
     domain = 'Government Portal';
   }
   document.getElementById('modal-content').innerHTML = `
@@ -2601,7 +2601,7 @@ function showPage(pageId) {
   const navLink = document.getElementById('nav-' + pageId);
   if (page) page.classList.add('active');
   if (navLink) navLink.classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
   document.getElementById('nav-links').classList.remove('open');
 
   if (window.location.hash !== '#' + pageId) {
